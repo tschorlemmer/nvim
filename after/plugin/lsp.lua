@@ -45,7 +45,7 @@ cmp.setup({
     {name = 'nvim_lsp'}
   },
   mapping = cmp.mapping.preset.insert({
-    ['ll'] = cmp.mapping.confirm({ select = true }),
+    ['kk'] = cmp.mapping.confirm({ select = true }),
   }),
   snippet = {
     expand = function(args)
