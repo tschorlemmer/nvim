@@ -1,1 +1,1 @@
-require('tschorle')
+require('core')
