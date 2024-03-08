@@ -10,6 +10,6 @@ if vim.fn.has('win32') == 1 then
 end
 
 -- Remap base keys, set options, and load lazy
-require('tschorle.remap')
-require('tschorle.set')
-require('tschorle.lazy')
+require('core.remap')
+require('core.set')
+require('core.lazy')
