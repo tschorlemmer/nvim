@@ -12,5 +12,10 @@ return
                 {'<leader>gb', ':G blame<CR>'},
                 {'<leader>gm', ':G mergetool<CR>'},
             },
+        cmd = 
+            {
+                'G',
+                'Git',
+            },
     },
 }
