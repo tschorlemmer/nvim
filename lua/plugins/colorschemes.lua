@@ -17,7 +17,12 @@ return
         priority = 100,
         config =
             function()
-                vim.cmd('colorscheme tokyonight-night')
+                vim.cmd('colorscheme tokyonight-moon')
+                vim.keymap.set('n', '<leader>cc', ':colorscheme tokyonight<CR>')
+                vim.keymap.set('n', '<leader>cm', ':colorscheme tokyonight-moon<CR>')
+                vim.keymap.set('n', '<leader>cn', ':colorscheme tokyonight-night<CR>')
+                vim.keymap.set('n', '<leader>cs', ':colorscheme tokyonight-storm<CR>')
+                vim.keymap.set('n', '<leader>cd', ':colorscheme tokyonight-day<CR>')
             end,
     },
     {
