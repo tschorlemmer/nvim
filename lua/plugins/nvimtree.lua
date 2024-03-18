@@ -21,6 +21,7 @@ return { {
                 vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
                 vim.keymap.set('n', '.', api.tree.change_root_to_node, opts('CD'))
                 vim.keymap.set('n', '<C-.>', api.node.run.cmd, opts('Run Cmd'))
+                vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
             end,
             actions = {
                 open_file = {
@@ -30,7 +31,7 @@ return { {
         }
 
         vim.keymap.set('n', '<leader>d',
-            function ()
+            function()
                 require('nvim-tree.api').tree.toggle({ find_file = true })
             end,
             { desc = "nvim-tree: toggle" }
