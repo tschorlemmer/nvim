@@ -18,6 +18,7 @@ return
 
           -- List of parsers to ignore installing (or "all")
           -- ignore_install = { "javascript" },
+          ignore_install = { "latex" },
 
           ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
           -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
@@ -30,7 +31,6 @@ return
               -- the name of the parser)
               -- list of language that will be disabled
               disable = {
-                  "tex",
                   "latex",
                   function(lang, buf)
                       local max_filesize = 100 * 1024 -- 100 KB
