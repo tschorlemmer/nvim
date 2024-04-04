@@ -1,11 +1,26 @@
 return {
     {
         "neovim/nvim-lspconfig",
+        event =
+        {
+            "VeryLazy",
+            -- "VimEnter",
+            -- "BufReadPre",
+            -- "BufNewFile",
+        },
+        -- cmd =
+        -- {
+        --     "LspInstall",
+        --     "LspUninstall",
+        --     "LspInfo",
+        -- },
         dependencies =
         {
             {
                 "williamboman/mason-lspconfig.nvim",
-                dependencies = { "williamboman/mason.nvim" }
+                dependencies = {
+                    "williamboman/mason.nvim",
+                },
             },
             "hrsh7th/nvim-cmp",
             "hrsh7th/cmp-nvim-lsp",
