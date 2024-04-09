@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>k", "O<Esc>")
 vim.keymap.set("t", "jj", "<C-\\><C-n>")
 
 vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>a")
-
+vim.keymap.set("n", "<leader>s", ":setlocal spell! spelllang=en_us<CR>")
 
 vim.keymap.set("n", "<C-J>", "<C-w>j")
 vim.keymap.set("n", "<C-K>", "<C-w>k")
