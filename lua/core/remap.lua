@@ -3,8 +3,8 @@ vim.g.maplocalleader = ' '
 vim.keymap.set("i", "jj", "<Esc>")
 
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {desc = "Move line down"})
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {desc = "Move line up"})
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>k", "O<Esc>")
 vim.keymap.set("t", "jj", "<C-\\><C-n>")
 
 vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>a")
-vim.keymap.set("n", "<leader>s", ":setlocal spell! spelllang=en_us<CR>")
+vim.keymap.set("n", "<leader>s", ":setlocal spell! spelllang=en_us<CR>", { desc = "toggle spell" })
 
 vim.keymap.set("n", "<C-J>", "<C-w>j")
 vim.keymap.set("n", "<C-K>", "<C-w>k")
