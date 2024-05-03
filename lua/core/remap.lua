@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = ' '
 vim.keymap.set("i", "jj", "<Esc>")
+vim.keymap.set("i", "jk", "<C-x>s")
 
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {desc = "Move line down"})
