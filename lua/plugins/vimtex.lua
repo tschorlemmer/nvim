@@ -7,6 +7,8 @@ return
             vim.g.vimtex_complier_method = 'latexmk'
             vim.g.vimtex_quickfix_autoclose_after_keystrokes = 2
 
+            vim.keymap.set('n', '<localleader>ls', ':VimtexCompileSS<CR>', {desc = 'VimTeX: Single Shot Compile to PDF'})
+
 
             vim.g.vimtex_toc_config = {
                 layer_status = {
