@@ -24,7 +24,10 @@ return {
             },
             "hrsh7th/nvim-cmp",
             "hrsh7th/cmp-nvim-lsp",
-            "L3MON4D3/LuaSnip",
+            {
+                "L3MON4D3/LuaSnip",
+                build = "make install_jsregexp",
+            },
         },
         config =
             function()
