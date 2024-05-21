@@ -16,6 +16,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<leader>j", "o<Esc>")
 vim.keymap.set("n", "<leader>k", "O<Esc>")
 
+vim.keymap.set("n", "<leader>w", ":set wrap!<CR>", {desc = "Toggle line wrapping"})
+
 vim.keymap.set("t", "jj", "<C-\\><C-n>")
 
 vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>a")
