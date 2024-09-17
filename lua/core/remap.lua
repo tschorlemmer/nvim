@@ -7,9 +7,7 @@ function keybinds.general()
     local nvim_tree = require("nvim-tree.api").tree
     wk.add({
         -- General Maps
-        { "jj",         "<Esc>",                                                     mode = "i", desc = "Exit Insert" },
-        { "jj",         "<C-\\><C-n>",                                               mode = "t", desc = "Exit Terminal" },
-        { "jk",         "<C-x>s",                                                    mode = "i", desc = "Spell Check Word" },
+        { "jk",         "<Esc>",                                                     mode = "i", desc = "Exit Insert" },
         { "J",          "mzJ`z",                                                     mode = "n", desc = "Collapse Line" },
         { "<C-d>",      "<C-d>zz",                                                   mode = "n", desc = "Down Half Page" },
         { "<C-u>",      "<C-u>zz",                                                   mode = "n", desc = "Up Half Page" },
@@ -80,9 +78,14 @@ function keybinds.general()
 
         -- Undo Tree
         { '<leader>u',  ':UndotreeToggle<CR>',                                       mode = 'n', desc = 'Toggle Undotree' },
-
-
     })
+
+    -- Set command for loading terminal commands
+    vim.api.nvim_create_autocmd('TermOpen',
+        {
+            pattern = "term://*",
+            callback = keybinds.terminal,
+        })
 end
 
 function keybinds.lsp(buf)
@@ -110,6 +113,21 @@ function keybinds.nvim_tree(buf, api)
         { ".",     api.tree.change_root_to_node, buffer = buf, mode = "n", desc = "Change Root" },
         { "<C-.>", api.node.run.cmd,             buffer = buf, mode = "n", desc = "Run Command" },
         { "v",     api.node.open.vertical,       buffer = buf, mode = "n", desc = "Open Veritical" },
+    })
+end
+
+function keybinds.terminal()
+    local wk = require("which-key")
+    wk.add({
+        { "<C-[>", "<C-\\><C-n>",    mode = "t",          desc = "Normal Mode" },
+        { "q",     "<cmd>close<CR>", mode = "n",          desc = "Exit Terminal" },
+    })
+end
+
+function keybinds.toggleterm(terminals)
+    local wk = require("which-key")
+    wk.add({
+        { "<leader>m", function() terminals.lazygit:toggle() end, mode = "n", desc = "Toggle LazyGit" },
     })
 end
 
