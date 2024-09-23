@@ -119,8 +119,8 @@ end
 function keybinds.terminal()
     local wk = require("which-key")
     wk.add({
-        { "<C-[>", "<C-\\><C-n>",    mode = "t",          desc = "Normal Mode" },
-        { "q",     "<cmd>close<CR>", mode = "n",          desc = "Exit Terminal" },
+        { "<C-[>", "<C-\\><C-n>",    buffer = 0, mode = "t", desc = "Normal Mode" },
+        { "q",     "<cmd>close<CR>", buffer = 0, mode = "n", desc = "Exit Terminal" },
     })
 end
 
@@ -128,6 +128,13 @@ function keybinds.toggleterm(terminals)
     local wk = require("which-key")
     wk.add({
         { "<leader>m", function() terminals.lazygit:toggle() end, mode = "n", desc = "Toggle LazyGit" },
+    })
+end
+
+function keybinds.lazygit(term)
+    local wk = require("which-key")
+    wk.add({
+        { "<C-[>", "", buffer=term.bufnr, mode = "t", desc = "Remove Bind" },
     })
 end
 

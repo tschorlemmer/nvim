@@ -53,7 +53,7 @@ return {
                 -- function to run on opening the terminal
                 on_open = function(term)
                     vim.cmd("startinsert!")
-                    -- Set Terminal keymaps
+                    require("core.remap").lazygit(term)
                 end,
                 -- function to run on closing the terminal
                 on_close = function(term)
