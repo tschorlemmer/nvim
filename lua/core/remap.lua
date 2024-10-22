@@ -7,56 +7,63 @@ function keybinds.general()
     local nvim_tree = require("nvim-tree.api").tree
     wk.add({
         -- General Maps
-        { "jk",         "<Esc>",                                                     mode = "i", desc = "Exit Insert" },
-        { "J",          "mzJ`z",                                                     mode = "n", desc = "Collapse Line" },
-        { "<C-d>",      "<C-d>zz",                                                   mode = "n", desc = "Down Half Page" },
-        { "<C-u>",      "<C-u>zz",                                                   mode = "n", desc = "Up Half Page" },
-        { "n",          "nzzzv",                                                     mode = "n", desc = "Next Center" },
-        { "N",          "Nzzzv",                                                     mode = "n", desc = "Previous Center" },
-        { "<leader>j",  "o<Esc>",                                                    mode = "n", desc = "Add Line Below" },
-        { "<leader>k",  "O<Esc>",                                                    mode = "n", desc = "Add Line Above" },
-        { "<C-s>",      "<Esc>:w<CR>a",                                              mode = "i", desc = "Save" },
-        { "<C-J>",      "<C-w>j",                                                    mode = "n", desc = "Move Down Window" },
-        { "<C-K>",      "<C-w>k",                                                    mode = "n", desc = "Move Up Window" },
-        { "<C-H>",      "<C-w>h",                                                    mode = "n", desc = "Move Left Window" },
-        { "<C-L>",      "<C-w>l",                                                    mode = "n", desc = "Move Right Window" },
-        { "J",          ":m '>+1<CR>gv=gv",                                          mode = "v", desc = "Move Line Down" },
-        { "K",          ":m '<-2<CR>gv=gv",                                          mode = "v", desc = "Move Line Down" },
+        { "jk",         "<Esc>",                                mode = "i", desc = "Exit Insert" },
+        { "J",          "mzJ`z",                                mode = "n", desc = "Collapse Line" },
+        { "<C-d>",      "<C-d>zz",                              mode = "n", desc = "Down Half Page" },
+        { "<C-u>",      "<C-u>zz",                              mode = "n", desc = "Up Half Page" },
+        { "n",          "nzzzv",                                mode = "n", desc = "Next Center" },
+        { "N",          "Nzzzv",                                mode = "n", desc = "Previous Center" },
+        { "<leader>j",  "o<Esc>",                               mode = "n", desc = "Add Line Below" },
+        { "<leader>k",  "O<Esc>",                               mode = "n", desc = "Add Line Above" },
+        { "<C-s>",      "<Esc>:w<CR>a",                         mode = "i", desc = "Save" },
+        { "<C-J>",      "<C-w>j",                               mode = "n", desc = "Move Down Window" },
+        { "<C-K>",      "<C-w>k",                               mode = "n", desc = "Move Up Window" },
+        { "<C-H>",      "<C-w>h",                               mode = "n", desc = "Move Left Window" },
+        { "<C-L>",      "<C-w>l",                               mode = "n", desc = "Move Right Window" },
+        { "J",          ":m '>+1<CR>gv=gv",                     mode = "v", desc = "Move Line Down" },
+        { "K",          ":m '<-2<CR>gv=gv",                     mode = "v", desc = "Move Line Down" },
 
         -- Leader maps
         { "<leader>",   group = "Leader" },
-        { "<leader>w",  ":set wrap!<CR>",                                            mode = "n", desc = "Toggle Wrap" },
-        { "<leader>s",  ":setlocal spell! spelllang=en_us<CR>",                      mode = "n", desc = "Toggle Spell" },
+        { "<leader>w",  ":set wrap!<CR>",                       mode = "n", desc = "Toggle Wrap" },
+        { "<leader>s",  ":setlocal spell! spelllang=en_us<CR>", mode = "n", desc = "Toggle Spell" },
 
         -- Tab maps
         { "<leader>t",  group = "Tabs" },
-        { "<leader>tq", ":tabclose<CR>",                                             mode = "n", desc = "Close Tab" },
-        { "<leader>to", ":tabonly<CR>",                                              mode = "n", desc = "Tab Only" },
-        { "<leader>tm", ":tabmove<Space>",                                           mode = "n", desc = "Move This Tab" },
-        { "<leader>1",  ":tabnext 1<CR>",                                            mode = "n", desc = "Tab 1" },
-        { "<leader>2",  ":tabnext 2<CR>",                                            mode = "n", desc = "Tab 2" },
-        { "<leader>3",  ":tabnext 3<CR>",                                            mode = "n", desc = "Tab 3" },
-        { "<leader>4",  ":tabnext 4<CR>",                                            mode = "n", desc = "Tab 4" },
-        { "<leader>5",  ":tabnext 5<CR>",                                            mode = "n", desc = "Tab 5" },
-        { "<leader>6",  ":tabnext 6<CR>",                                            mode = "n", desc = "Tab 6" },
-        { "<leader>7",  ":tabnext 7<CR>",                                            mode = "n", desc = "Tab 7" },
-        { "<leader>8",  ":tabnext 8<CR>",                                            mode = "n", desc = "Tab 8" },
-        { "<leader>9",  ":tabnext 9<CR>",                                            mode = "n", desc = "Tab 9" },
-        { "<leader>th", ":tabprev<CR>",                                              mode = "n", desc = "Tab Left" },
-        { "<leader>tl", ":tabnext<CR>",                                              mode = "n", desc = "Tab Right" },
-        { "<leader>tt", ":tabnew<CR>",                                               mode = "n", desc = "New Tab" },
-        { "<leader>tn", ":tabnew<CR>",                                               mode = "n", desc = "New Tab" },
-        { "<leader>tp", "<C-Tab>",                                                   mode = "n", desc = "Previous Tab" },
+        { "<leader>tq", ":tabclose<CR>",                        mode = "n", desc = "Close Tab" },
+        { "<leader>to", ":tabonly<CR>",                         mode = "n", desc = "Tab Only" },
+        { "<leader>tm", ":tabmove<Space>",                      mode = "n", desc = "Move This Tab" },
+        { "<leader>1",  ":tabnext 1<CR>",                       mode = "n", desc = "Tab 1" },
+        { "<leader>2",  ":tabnext 2<CR>",                       mode = "n", desc = "Tab 2" },
+        { "<leader>3",  ":tabnext 3<CR>",                       mode = "n", desc = "Tab 3" },
+        { "<leader>4",  ":tabnext 4<CR>",                       mode = "n", desc = "Tab 4" },
+        { "<leader>5",  ":tabnext 5<CR>",                       mode = "n", desc = "Tab 5" },
+        { "<leader>6",  ":tabnext 6<CR>",                       mode = "n", desc = "Tab 6" },
+        { "<leader>7",  ":tabnext 7<CR>",                       mode = "n", desc = "Tab 7" },
+        { "<leader>8",  ":tabnext 8<CR>",                       mode = "n", desc = "Tab 8" },
+        { "<leader>9",  ":tabnext 9<CR>",                       mode = "n", desc = "Tab 9" },
+        { "<leader>th", ":tabprev<CR>",                         mode = "n", desc = "Tab Left" },
+        { "<leader>tl", ":tabnext<CR>",                         mode = "n", desc = "Tab Right" },
+        { "<leader>tt", ":tabnew<CR>",                          mode = "n", desc = "New Tab" },
+        { "<leader>tn", ":tabnew<CR>",                          mode = "n", desc = "New Tab" },
+        { "<leader>tp", "<C-Tab>",                              mode = "n", desc = "Previous Tab" },
 
         -- Telescope maps
         { "<leader>f",  group = "Find" },
-        { '<leader>ff', builtin.find_files,                                          mode = 'n', desc = 'find_files' },
-        { '<leader>fg', builtin.live_grep,                                           mode = 'n', desc = 'live_grep' },
-        { '<leader>fk', builtin.keymaps,                                             mode = 'n', desc = 'find files' },
-        { '<leader>fj', builtin.current_buffer_fuzzy_find,                           mode = 'n', desc = 'current_buffer_fuzzy_find' },
-        { '<leader>fq', builtin.quickfix,                                            mode = 'n', desc = 'quickfix' },
-        { '<leader>fh', builtin.help_tags,                                           mode = 'n', desc = 'help_tags' },
-        { '<leader>fm', builtin.man_pages,                                           mode = 'n', desc = 'man_pages' },
+        { '<leader>ff', builtin.find_files,                     mode = 'n', desc = 'find_files' },
+        { '<leader>fg', builtin.live_grep,                      mode = 'n', desc = 'live_grep' },
+        { '<leader>fk', builtin.keymaps,                        mode = 'n', desc = 'find files' },
+        { '<leader>fj', builtin.current_buffer_fuzzy_find,      mode = 'n', desc = 'current_buffer_fuzzy_find' },
+        { '<leader>fq', builtin.quickfix,                       mode = 'n', desc = 'quickfix' },
+        { '<leader>fh', builtin.help_tags,                      mode = 'n', desc = 'help_tags' },
+        {
+            '<leader>fm',
+            function()
+                builtin.man_pages({ sections = { 'ALL' } })
+            end,
+            mode = 'n',
+            desc = 'man_pages'
+        },
 
         -- Harpoon Maps
         { "<leader>h",  group = "Harpoon" },
@@ -134,7 +141,7 @@ end
 function keybinds.lazygit(term)
     local wk = require("which-key")
     wk.add({
-        { "<C-[>", "", buffer=term.bufnr, mode = "t", desc = "Remove Bind" },
+        { "<C-[>", "", buffer = term.bufnr, mode = "t", desc = "Remove Bind" },
     })
 end
 

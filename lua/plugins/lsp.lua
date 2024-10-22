@@ -33,8 +33,6 @@ return
         },
         config =
             function()
-
-
                 vim.api.nvim_create_autocmd('LspAttach', {
                     desc = 'LSP actions',
                     callback = function(event)
@@ -87,8 +85,20 @@ return
                         { name = 'nvim_lsp' },
                     },
                     mapping = cmp.mapping.preset.insert({
-                        -- Enter key confirms completion item
-                        ['kk'] = cmp.mapping.confirm({ select = true }),
+                        -- kk key confirms completion item
+                        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                        ['<Tab>'] = cmp.mapping(function(fallback)
+                            local luasnip = require('luasnip')
+                            if cmp.visible() then
+                                cmp.select_next_item()
+                            elseif luasnip.expandable() then
+                                luasnip.expand()
+                            elseif luasnip.expand_or_jumpable() then
+                                luasnip.expand_or_jump()
+                            else
+                                fallback()
+                            end
+                        end, { 'i', 's' }),
 
                         -- Ctrl + space triggers completion menu
                         -- ['<C-Space>'] = cmp.mapping.complete(),
