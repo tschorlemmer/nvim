@@ -86,7 +86,7 @@ return
                     },
                     mapping = cmp.mapping.preset.insert({
                         -- kk key confirms completion item
-                        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                        ['kk'] = cmp.mapping.confirm({ select = true }),
                         ['<Tab>'] = cmp.mapping(function(fallback)
                             local luasnip = require('luasnip')
                             if cmp.visible() then
