@@ -33,20 +33,24 @@ return
     {
         'rebelot/kanagawa.nvim',
         name = 'kanagawa',
-        lazy = true,
+        lazy = false,
         priority = 100,
+        config =
+            function()
+                vim.cmd('colorscheme kanagawa')
+            end,
     },
     {
         'navarasu/onedark.nvim',
         name = 'onedark',
-        lazy = false,
+        lazy = true,
         priority = 100,
         config =
             function()
                 require('onedark').setup {
                         style = 'darker'
                     }
-                require('onedark').load()
+                -- require('onedark').load()
             end,
     },
     {
