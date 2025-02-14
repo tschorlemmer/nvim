@@ -3,11 +3,11 @@ return
     {
         'cocopon/iceberg.vim',
         name = 'iceberg',
-        lazy = false,
+        lazy = true,
         priority = 100,
         config =
             function()
-                vim.cmd('colorscheme iceberg')
+                -- vim.cmd('colorscheme iceberg')
             end,
     },
     {
@@ -35,6 +35,19 @@ return
         name = 'kanagawa',
         lazy = true,
         priority = 100,
+    },
+    {
+        'navarasu/onedark.nvim',
+        name = 'onedark',
+        lazy = false,
+        priority = 100,
+        config =
+            function()
+                require('onedark').setup {
+                        style = 'darker'
+                    }
+                require('onedark').load()
+            end,
     },
     {
         'nvim-lualine/lualine.nvim',
