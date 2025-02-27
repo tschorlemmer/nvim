@@ -29,10 +29,6 @@ return {
         },
     },
     {
-        -- LLM Completion
-        'github/copilot.vim',
-    },
-    {
         'akinsho/toggleterm.nvim',
         version = "*",
         config = function()
@@ -50,15 +46,16 @@ return {
                 float_opts = {
                     border = "double",
                 },
-                -- function to run on opening the terminal
-                on_open = function(term)
-                    vim.cmd("startinsert!")
-                    require("core.remap").lazygit(term)
-                end,
-                -- function to run on closing the terminal
-                on_close = function(term)
-                    vim.cmd("startinsert!")
-                end,
+            })
+
+            -- top
+            terminals.top = Terminal:new({
+                cmd = "top",
+                dir = "git_dir",
+                direction = "float",
+                float_opts = {
+                    border = "double",
+                },
             })
 
             -- Set Keymaps

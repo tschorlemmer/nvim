@@ -5,6 +5,7 @@ function keybinds.general()
     local builtin = require('telescope.builtin')
     local harpoon = require("harpoon")
     local nvim_tree = require("nvim-tree.api").tree
+    local toggleterm = require('toggleterm')
     wk.add({
         -- General Maps
         { "jk",         "<Esc>",                                mode = "i", desc = "Exit Insert" },
@@ -85,14 +86,25 @@ function keybinds.general()
 
         -- Undo Tree
         { '<leader>u',  ':UndotreeToggle<CR>',                                       mode = 'n', desc = 'Toggle Undotree' },
+
+        -- -- ToggleTerm
+        -- {
+        --     '<C-\\>',
+        --     function()
+        --         toggleterm.toggle()
+        --     end,
+        --     mode = 'n',
+        --     desc = 'ToggleTerm'
+        -- },
+        -- { '<C-\\>', '<C-\\><C-n>:ToggleTerm<CR>', mode = 't', desc = 'ToggleTerm' },
     })
 
-    -- Set command for loading terminal commands
-    vim.api.nvim_create_autocmd('TermOpen',
-        {
-            pattern = "term://*",
-            callback = keybinds.terminal,
-        })
+    -- -- Set command for loading terminal commands
+    -- vim.api.nvim_create_autocmd('TermOpen',
+    --     {
+    --         pattern = "term://*",
+    --         callback = keybinds.terminal,
+    --     })
 end
 
 function keybinds.lsp(buf)
@@ -123,25 +135,19 @@ function keybinds.nvim_tree(buf, api)
     })
 end
 
-function keybinds.terminal()
-    local wk = require("which-key")
-    wk.add({
-        { "<C-[>", "<C-\\><C-n>",    buffer = 0, mode = "t", desc = "Normal Mode" },
-        { "q",     "<cmd>close<CR>", buffer = 0, mode = "n", desc = "Exit Terminal" },
-    })
-end
+-- function keybinds.terminal()
+--     local wk = require("which-key")
+--     wk.add({
+--         { "<C-[>", "<C-\\><C-n>",    buffer = 0, mode = "t", desc = "Normal Mode" },
+--         { "q",     "<cmd>close<CR>", buffer = 0, mode = "n", desc = "Exit Terminal" },
+--     })
+--     vim.cmd('startinsert!')
+-- end
 
 function keybinds.toggleterm(terminals)
     local wk = require("which-key")
     wk.add({
         { "<leader>m", function() terminals.lazygit:toggle() end, mode = "n", desc = "Toggle LazyGit" },
-    })
-end
-
-function keybinds.lazygit(term)
-    local wk = require("which-key")
-    wk.add({
-        { "<C-[>", "", buffer = term.bufnr, mode = "t", desc = "Remove Bind" },
     })
 end
 
