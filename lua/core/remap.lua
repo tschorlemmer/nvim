@@ -87,6 +87,9 @@ function keybinds.general()
         -- Undo Tree
         { '<leader>u',  ':UndotreeToggle<CR>',                                       mode = 'n', desc = 'Toggle Undotree' },
 
+        -- DOGE
+        { '<leader>c',  '<Plug>(doge-generate)',                                     mode = 'n', desc = 'DOGE Generate' },
+
         -- -- ToggleTerm
         -- {
         --     '<C-\\>',
