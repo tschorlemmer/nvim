@@ -165,8 +165,7 @@ function keybinds.general()
 		{
 			"<F3>",
 			function()
-				require("conform").format()
-				print("format")
+				require("conform").format({ lsp_format = "fallback" })
 			end,
 			buffer = buf,
 			mode = { "n", "x" },
