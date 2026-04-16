@@ -183,7 +183,7 @@ function keybinds.general()
 		-- DOGE
 		{
 			"<leader>c",
-			"<Plug>(doge-generate)",
+			":DogeGenerate<CR>",
 			mode = "n",
 			desc = "DOGE Generate",
 		},
