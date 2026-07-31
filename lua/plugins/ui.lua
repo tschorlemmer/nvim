@@ -94,9 +94,5 @@ return
         config = function()
             require("ibl").setup()
         end
-    },
-    {
-        'MeanderingProgrammer/render-markdown.nvim',
-        opts = {},
     }
 }
